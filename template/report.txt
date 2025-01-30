@@ -1,0 +1,37 @@
+Project Report: Website Development
+
+Introduction:
+The purpose of this report is to document the process and outcomes of a website development project. This report will cover the project scope, objectives, requirements, design, development, testing, and deployment phases of the project.
+
+Project Scope:
+The scope of this project is to develop a responsive website for a small business that aloows user to book restaurant. The website will include a home page, an about page, a gallery page displaying restaurants, a contact page, and an platform for users to reserve a restaurant.
+
+Objectives:
+To create a visually pleasing and user-friendly website that accurately represents the brand.
+To provide customers with an easy and secure way to reserve restaurant(s) online.
+To ensure that the website is fully responsive and optimized for all devices.
+To ensure that the website is built with web standards and best practices in mind.
+
+Requirements:
+A home page that includes a hero image and call to action.
+An about page that includes information about the business and its restaurants.
+A gallery page that displays restaurants with the option to filter by category.
+A contact page that includes a form for customers to contact the business.
+An e-commerce platform for customers to reserve restaurant(s).
+The website must be built using HTML, CSS, and JavaScript.
+The website must be fully responsive and optimized for all devices.
+The website must be built with web standards and best practices in mind.
+Design
+The website was designed with a minimalistic and modern aesthetic. The layout was designed to be clean and easy to navigate, with a focus on the restaurants and their images.
+
+Development
+The website was developed using HTML, CSS, and JavaScript. The website was built with a responsive design, ensuring that it looks and works great on all devices. The website was also built with web standards and best practices in mind, ensuring that it is fast, accessible, and easy to maintain.
+
+Testing
+The website was thoroughly tested on various devices and browsers to ensure that it looks and works as expected. The e-commerce platform was also tested to ensure that it is secure and easy to use.
+
+Deployment
+The website was successfully deployed and is now live on the internet. The website is hosted on a reliable and secure server, and it is backed up regularly to ensure that it is always available.
+
+Conclusion
+Overall, this project was a success, and the website meets all of the objectives and requirements. The website is visually pleasing, user-friendly, and fully responsive, and the e-commerce platform is secure and easy to use. The website is now live and ready to attract new customers and increase sales for the business.

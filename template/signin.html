@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/restaurant-svgrepo-com.svg" type="image/x-icon">
+    <title>SignIn</title>
+    <style>
+        body {
+            background: rgb(31 41 55);
+            padding: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ddd;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 2px;
+            margin-bottom: 2%;
+            width: fit-content;
+            margin: auto;
+        }
+
+        h2:after {
+            content: "";
+            width: 100%;
+            border: 2px groove crimson;
+            background-color: crimson;
+            border-radius: 10px;
+        }
+
+        form {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ddd;
+            margin-bottom: 5%;
+        }
+
+
+        input {
+            outline: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            position: relative;
+            width: 90%;
+            margin: auto;
+            margin: 1%;
+            padding: 2%;
+            border-radius: 10px;
+            color: aquamarine;
+            background: rgba(128, 128, 128, 0.753);
+            letter-spacing: 2px;
+            border: none;
+        }
+
+        input:active,
+        input:hover {
+            background-color: rgba(0, 0, 0, 0.300);
+        }
+
+        .nameofusr {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+        }
+
+        .nameofusr input {
+            width: 40%;
+            min-width: 250px;
+        }
+
+
+        .typeofres {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        .answer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .answer label {
+            width: 100%;
+            word-wrap: normal;
+            padding: 1%;
+            margin: 2%;
+        }
+
+        span {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            min-width: 25%;
+        }
+
+        button {
+            background: rgba(220, 20, 60, 0.808);
+            width: fit-content;
+            margin: auto;
+            padding: 15px;
+            color: #ddd;
+            margin-top: 5%;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            box-sizing: border-box;
+            letter-spacing: 2px;
+            transition: all 0.5s ease-in-out;
+        }
+
+        strong {
+            color: yellow;
+        }
+
+        .accept {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: 5%;
+        }
+
+        .accept label {
+            width: 100%;
+            letter-spacing: 2px;
+        }
+
+        a {
+            color: aqua;
+        }
+
+        ::placeholder {
+            color: #ddd;
+        }
+
+        button:hover {
+            background:rgba(20, 220, 137, 0.200);
+            letter-spacing: 3px;
+        }
+
+        #passwd {
+            color: red;
+        }
+        pre{
+            color:red;
+            text-align: center;
+            width: auto;
+            padding:1%;
+        }
+        
+    </style>
+</head>
+
+<body>
+
+    <h2>Sign In</h2>
+
+    <pre><?php 
+        if (isset($_GET['msg'])){
+            $error = $_GET['msg'];
+            echo $error ;
+        }
+        ?>
+    </pre>
+
+    <form action="/restofile/php/signin.php" method="post">
+        <input type="email" name="Email" id="" placeholder="Eamil Id" required><br>
+        <input type="password" name="password" id="passwd" placeholder="password" required><br>
+        <button type="submit" name="login-sub" >Sign In</button>
+    </form>
+    <span class="accept">
+        <!-- <input type="checkbox" name="" id="terms" required> -->
+        <!-- <label for="forgotpwd"><a href="./trail.php">Forgot password?</a></label> -->
+        <label for="signup"><a href="./signup.html"><button>Sign Up (New User?)</button></a></label>
+    </span>
+</body>
+
+</html>

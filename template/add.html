@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/restaurant-svgrepo-com.svg" type="image/x-icon">
+
+    <title>Add Restaurant</title>
+    <style>
+        body{
+            background:rgb(31 41 55);
+            padding:5%;
+        }
+        h2{
+            text-align: center;
+    color:#ddd;
+    padding:1%;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 2px;
+    margin-bottom:2%;
+    width: fit-content;
+    margin: auto;
+}
+
+h2:after{
+    content:"";
+    width:100%;
+    border:2px groove crimson;
+    background-color: crimson;
+    border-radius: 10px;
+}
+
+form{
+    position:relative;
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color:#ddd;
+    margin-bottom:5%;
+}
+
+
+input{
+    outline: none;
+    font-family:'Times New Roman', Times, serif;
+    font-weight:400;
+    position:relative;
+    width:90%;
+    margin:auto;
+    margin:1%;
+    padding:2%;
+    border-radius: 10px;
+    color:aquamarine;
+    background:rgba(128, 128, 128, 0.753);
+    letter-spacing: 2px;
+    border:none;
+}
+
+input:active,input:hover{
+    background-color: rgba(0, 0, 0, 0.300);
+}
+
+.nameofusr{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    align-items: center;
+}
+
+.nameofusr input{
+    width:40%;
+    min-width:250px;
+}
+
+
+.typeofres{
+    display: flex;
+    flex-direction: column;
+    width:100%;
+    margin-top:5%;
+}
+
+.answer{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    align-items: center;
+}
+.answer label{
+    width:100%;
+    word-wrap:normal;
+    padding:1%;
+    margin:2%;
+}
+
+span{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    align-items: center;
+    min-width:25%;
+}
+
+button{
+    background:rgba(220, 20, 60, 0.808);
+    width:50%;
+    margin:auto;
+    padding:2%;
+    color:#ddd;
+    margin-top:5%;
+    border-radius:10px;
+    border:none;
+}
+
+strong{
+    color:yellow;
+}
+
+.accept{
+    width:100%;
+    display: flex;
+    justify-content:space-around;
+    margin-top:5%;
+}
+
+.accept label{
+    width:100%;
+    letter-spacing: 2px;
+}
+
+a{
+    color:aqua;
+}
+
+::placeholder{
+    color:#ddd;
+}
+
+pre{
+    color:red;
+    text-align: center;
+    width: auto;
+    padding:1%;
+}
+
+</style>
+</head>
+<body>
+    <h2>Add Details of New Restaurant</h2>
+    <pre><?php 
+        if (isset($_GET['msg'])){
+            $error = $_GET['msg'];
+            echo $error ;
+        }
+        ?>
+    </pre>
+    <form action="/restofile/php/add.php" method="post">
+
+        <input type="text" name="restoname" id="" placeholder="Restaurent Name" required><br>
+
+        <input type="number" name="lowestprice" id="" placeholder="Lowest Price (&#8377;)" required><br>
+
+        <input type="number" name="highestprice" id="" placeholder="Highest Price (&#8377;)" required><br>
+
+        <input type="text" name="location" id="" placeholder="Location of restaurant" required><br>
+
+        <input type="tel" name="contactno" id="" placeholder="Contact no. of restaurant with country code">
+
+        <input type="text" name="opentime" placeholder="Opening time?">
+
+        <input type="text" name="closetime" placeholder="Closing time?">
+
+        <input type="text" name = "imageurl" placeholder = "url of restaurant image available online">
+
+        <div class="typeofres">
+        <label class="typ"><strong>Type :</strong></label>
+        <br>
+        <div class="answer">
+        <span>
+        <input type="radio" name="typeof" id="veg" value="V" required>
+        <label for="veg">Veg</label>
+        </span>
+
+        <span>
+        <input type="radio" name="typeof" id="nonveg" value="NV" required>
+        <label for="nonveg">Non Veg</label>
+        </span>
+
+        <span>
+        <input type="radio" name="typeof" id="mix" value="MIX" required>
+        <label for="mix">Mix</label>
+        </span>
+        <br>
+    </div>
+    </div>
+    <span class="accept">
+        <input type="checkbox" name="" id="terms" required>
+        <label for="terms">I accept <a href="./terms_conditions.html" target="_blank">these</a> terms and policies</label>
+    </span>
+        <button type="submit" name="add">Submit</button>
+    </form>
+</body>
+</html>

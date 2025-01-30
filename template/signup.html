@@ -1,0 +1,227 @@
+    <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../imgs/restaurant-svgrepo-com.svg" type="image/x-icon">
+    <title>Signup</title>
+    <style>
+        body {
+            background: rgb(31 41 55);
+            padding: 5%;
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ddd;
+            padding: 1%;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 2px;
+            margin-bottom: 2%;
+            width: fit-content;
+            margin: auto;
+        }
+
+        h2:after {
+            content: "";
+            width: 100%;
+            border: 2px groove crimson;
+            background-color: crimson;
+            border-radius: 10px;
+        }
+
+        form {
+            position: relative;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ddd;
+            margin-bottom: 5%;
+        }
+
+        input {
+            outline: none;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+            position: relative;
+            width: 90%;
+            margin: auto;
+            margin: 1%;
+            padding: 2%;
+            border-radius: 10px;
+            color: aquamarine;
+            background: rgba(128, 128, 128, 0.753);
+            letter-spacing: 2px;
+            border: none;
+        }
+
+        input:active,
+        input:hover {
+            background-color: rgba(0, 0, 0, 0.300);
+        }
+
+        .nameofusr {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            align-items: center;
+        }
+
+        .nameofusr input {
+            width: 40%;
+            min-width: 250px;
+        }
+
+
+        .typeofres {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 5%;
+        }
+
+        .answer {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .answer label {
+            width: 100%;
+            word-wrap: normal;
+            padding: 1%;
+            margin: 2%;
+        }
+
+        span {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            min-width: 25%;
+        }
+
+        button {
+            background: rgba(220, 20, 60, 0.808);
+            width: fit-content;
+            margin: auto;
+            padding: 15px;
+            color: #ddd;
+            margin-top: 5%;
+            border-radius: 10px;
+            border: none;
+            font-weight: 600;
+            box-sizing: border-box;
+            letter-spacing: 2px;
+            /* border: transparent 5px groove; */
+            transition: all 0.5s ease-out;
+            padding:2%;
+        }
+
+        strong {
+            color: yellow;
+        }
+
+        .accept {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-top: 5%;
+        }
+
+        .accept label {
+            width: fit-content;
+            margin:5px;
+            letter-spacing: 2px;
+        }
+
+        .accept input{
+            width:fit-content;
+            margin:5px;
+            margin-right:10px;
+        }
+
+        a {
+            color: aqua;
+        }
+
+        ::placeholder {
+            color: #ddd;
+        }
+
+        button:hover {
+            background:rgba(20, 220, 137, 0.200);
+            letter-spacing: 3px;
+            /* border: rgba(220, 20, 60, 0.808) 5px groove; */
+        }
+
+        #passwd {
+            color: red;
+        }
+        .errorshow{
+            color:red;
+            margin-top:1%;
+            margin-bottom:3%;
+            text-align: center;
+            padding:1%;
+            word-spacing:3px;
+        }
+        pre{
+            color:red;
+            text-align: center;
+            width: auto;
+            padding:1%;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Sign Up</h2>
+
+    <pre><?php 
+    if (isset($_GET['msg'])){
+        $error = $_GET['msg'];
+        echo $error ;
+    }
+    ?>
+    </pre>
+
+    <div class="errorshow"></div>
+    <form action="/restofile/php/signup.php" method="post">
+        <div class="nameofusr">
+        <input type="text" name="FirstName" class="tempo" placeholder="First Name" value = "<?php if (isset($_GET['msg'])){echo $_GET['fullName'];} ?>" required>
+
+        <input type="text" name="LastName" class="tempo" placeholder="Last Name" value = "<?php if (isset($_GET['msg'])){echo $_GET['LastName'];} ?>" required>
+        </div><br>
+
+        <input type="text" name="username" id="usrname" class="tempo" value = "<?php if (isset($_GET['msg'])){echo $_GET['username'];} ?>" placeholder="Username" required>
+
+        <input type="tel" name="contactno" id="contact" value = "<?php if (isset($_GET['msg'])){echo $_GET['contactno'];} ?>" placeholder="contact no. with country code" required>
+
+        <input type="email" name="EmailId" value = "<?php if (isset($_GET['msg'])){echo $_GET['EmailId'];} ?>" placeholder="Eamil Id" required><br>
+
+        <input type="password" name="password" id="passwd" placeholder="password" required><br>
+
+        <input type="password" name="repassword" id="passwd" class="tempo" placeholder="Re enter password" required><br>
+
+    </div>
+    <span class="accept">
+        <input type="checkbox" name="" id="terms" required>
+        <label for="terms">I accept <a href="./terms_conditions.html" target="_blank">these</a> terms and conditions</label>
+    </span> 
+        <button type="submit" value="signup">Sign Up</button>
+    </form>
+    <span>
+        <!-- <label for="forgotpwd"><a href="/restofile/template/trail.php">Forgot password?</a></label> -->
+        <label for="signup"><a href="/restofile/template//signin.html"><button>Sign In<br><br>(already a member?)</button></a></label>
+    </span>
+</body>
+</html>
